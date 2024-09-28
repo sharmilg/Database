@@ -1,5 +1,7 @@
 Week 3 excercise 3:
+
 Qno.1 ans
+
 select country.name as "country name", airport.name as "airport name" from country, airport where country.iso_country and country.name = 'Iceland';
 
 
@@ -7,6 +9,7 @@ select country.name as "country name", airport.name as "airport name" from count
 
 
 Qno.2 ans
+
 select airport.name as "airport name" from airport join country on airport.iso_country= country.iso_country where country.name = "France" and airport.type = "large_airport";
 
 
@@ -14,6 +17,7 @@ select airport.name as "airport name" from airport join country on airport.iso_c
 
 
 Qno.3 ans
+
 select country.name as "country name", airport.name as "airport_name" from country, airport where airport.iso_country = country.iso_country and country.continent = "AN";
 
 
@@ -21,6 +25,7 @@ select country.name as "country name", airport.name as "airport_name" from count
 
 
 Qno.4 ans
+
 select elevation_ft from airport join game on airport.ident = game.location where screen_name = "Heini";
 
 
@@ -28,6 +33,7 @@ select elevation_ft from airport join game on airport.ident = game.location wher
 
 
 Qno.5 ans
+
 set @elevation_m = 0;
 select (elevation_ft * 0.3048) as elevation_m from airport join game on airport.ident = game.location where screen_name = "Heini";
 
@@ -36,6 +42,7 @@ select (elevation_ft * 0.3048) as elevation_m from airport join game on airport.
 
 
 Qno.6 ans
+
 select name from airport join game on airport.ident = game.location where screen_name = "Ilkka";
 
 
@@ -43,6 +50,7 @@ select name from airport join game on airport.ident = game.location where screen
 
 
 Qno.7 ans
+
 select country.name from country, airport, game where game.location = airport.ident and airport.iso_country = country.iso_country and game.screen_name = "Ilkka";
 
 
@@ -50,6 +58,7 @@ select country.name from country, airport, game where game.location = airport.id
 
 
 Qno.8 ans
+
 select goal.name from goal, goal_reached, game where goal.id=goal_id and game.id= game_id and screen_name = "Heini";
 
 
@@ -57,6 +66,7 @@ select goal.name from goal, goal_reached, game where goal.id=goal_id and game.id
 
 
 Qno.9 ans
+
 select airport.name from airport, game, goal_reached, goal where airport.ident = game.location and game.id = game_id and goal.id = goal_id and game.screen_name = "Ilkka" and goal.name = "clouds";
 
 
@@ -64,6 +74,7 @@ select airport.name from airport, game, goal_reached, goal where airport.ident =
 
 
 Qno.10 ans
+
 select country.name from airport, country, game, goal, goal_reached where country.iso_country = airport.iso_country and airport.ident = game.location and game.id = goal_reached.game_id and goal.id = goal_reached.goal_id and game.screen_name = "Illka" and goal.name = "clouds";
 
 
